@@ -5,13 +5,10 @@ import java.util.Scanner;
 public class Aposta {
 
     Scanner entrada = new Scanner(System.in);
-    Codigo codi = new Codigo();
-    Sorteio sor = new Sorteio();
-    public int apostA;
-    public int apostB;
-    public int apostC;
-    public int apostD;
-    public int apostE;
+    private int numAposta[] = new int[5];
+    private int repedito[] = new int[5];
+    boolean resultado = false;
+    int x = 0;
     public int aposta;
     private int senha;
     public int pass;
@@ -23,22 +20,28 @@ public class Aposta {
     }
 
     //=================================================================================================================
-    public void result() {
-        if (getApostA() == 0) {
+    public void result(Codigo codi) {
+        if (numAposta[0] == 0) {
             System.out.println("\n\t\t!! Resultados Ainda Não Disponiveis Para O Sorteio !!");
         } else {
-            System.out.println("\nOs Numeros Sorteados Foram: " + getApostA() + " - " + getApostB() + " - " + getApostC() + " - " + getApostD() + " - " + getApostE());
-            System.out.println("Os Numeros Jogados Foram: " + codi.getNumA() + " - " + codi.getNumB() + " - " + codi.getNumC() + " - " + codi.getNumD() + " - " + codi.getNumE());
-            sor.compara();
+            System.out.println("\nOs Numeros Sorteados Foram: " + numAposta[0] + " - " + numAposta[1] + " - " + numAposta[2] + " - " + numAposta[3] + " - " + numAposta[4]);
+            //System.out.println("Os Numeros Jogados Foram: " + codi.getNumA() + " - " + codi.getNumB() + " - " + codi.getNumC() + " - " + codi.getNumD() + " - " + codi.getNumE());
+
+            /*if (getApostA() != codi.getNumA()) {
+                System.out.println("\n** Não Acertou Nenhum Numero **");
+            }
+            if (getApostA() == codi.getNumA()) {
+                System.out.println("\n## Acertou o Nº: " + getApostA());
+            }*/
         }
     }
 
     //=================================================================================================================
     public void sortead() {
-        if (getApostA() == 0) {
+        if (numAposta[0] == 0) {
             System.out.println("\n\t\t!! Os Nºs Sorteados Ainda Não Sairam !!");
         } else {
-            System.out.println("\nOs Numeros Sorteados Foram: " + getApostA() + " - " + getApostB() + " - " + getApostC() + " - " + getApostD() + " - " + getApostE());
+            System.out.println("\nOs Numeros Sorteados Foram: " + numAposta[0] + " - " + numAposta[1] + " - " + numAposta[2] + " - " + numAposta[3] + " - " + numAposta[4]);
         }
     }
 
@@ -53,57 +56,30 @@ public class Aposta {
             System.out.println("\n\t** Numeros A Sortear **");
             System.out.println("\n\tEntre Com Os 5 Numeros Do Sorteio\n");
             //-- primeiro numero --
-            do {
-                System.out.print("Entre Com o 1º Numero a Sortear: ");
+            for (int i = 0; i < 5; i++) {
+                System.out.print("Entre Com o " + (i + 1) + "º Numero a Sortear: ");
                 aposta = entrada.nextInt();
-                if (aposta >= 1 && aposta <= 50) {
-                    setApostA(aposta);
-                } else {
-                    System.out.println("\n\t!! Entre Com Nºs Entre 1 e 50 !!\n");
+
+                numAposta[i] = aposta;
+            }
+
+            while (!resultado) {
+                resultado = true;
+
+                for (int i = 0; i < numAposta.length - 1; i++) {
+                    if (numAposta[i] > numAposta[i + 1]) {
+                        resultado = false;
+
+                        x = numAposta[i + 1];
+                        numAposta[i + 1] = numAposta[i];
+                        numAposta[i] = x;
+                    }
                 }
-            } while (aposta <= 0 || aposta >= 51);
-            //-- segundo numero --
-            do {
-                System.out.print("Entre Com o 2º Numero a Sortear: ");
-                aposta = entrada.nextInt();
-                if (aposta >= 1 && aposta <= 50) {
-                    setApostB(aposta);
-                } else {
-                    System.out.println("\n\t!! Entre Com Nºs Entre 1 e 50 !!\n");
-                }
-            } while (aposta <= 0 || aposta >= 51);
-            //-- terceiro numero --
-            do {
-                System.out.print("Entre Com o 3º Numero a Sortear: ");
-                aposta = entrada.nextInt();
-                if (aposta >= 1 && aposta <= 50) {
-                    setApostC(aposta);
-                } else {
-                    System.out.println("\n\t!! Entre Com Nºs Entre 1 e 50 !!\n");
-                }
-            } while (aposta <= 0 || aposta >= 51);
-            //-- quarto numero --
-            do {
-                System.out.print("Entre Com o 4º Numero a Sortear: ");
-                aposta = entrada.nextInt();
-                if (aposta >= 1 && aposta <= 50) {
-                    setApostD(aposta);
-                } else {
-                    System.out.println("\n\t!! Entre Com Nºs Entre 1 e 50 !!\n");
-                }
-            } while (aposta <= 0 || aposta >= 51);
-            //-- quinto numero --
-            do {
-                System.out.print("Entre Com o 5º Numero a Sortear: ");
-                aposta = entrada.nextInt();
-                if (aposta >= 1 && aposta <= 50) {
-                    setApostE(aposta);
-                } else {
-                    System.out.println("\n\t!! Entre Com Nºs Entre 1 e 50 !!\n");
-                }
-            } while (aposta <= 0 || aposta >= 51);
+            }
             //-- numeros da aposta --
-            System.out.println("\nOs Numeros Escolhidos Foram: " + getApostA() + " - " + getApostB() + " - " + getApostC() + " - " + getApostD() + " - " + getApostE());
+            System.out.println("\nOs Numeros Escolhidos Foram: " + numAposta[0] + " - " + numAposta[1] + " - " + numAposta[2] + " - " + numAposta[3] + " - " + numAposta[4]);
+            //---- construir comparador ----
+            //=================================================================================================================
         }
     }
 
@@ -161,44 +137,5 @@ public class Aposta {
         this.senha = senha;
     }
 
-    public int getApostA() {
-        return apostA;
-    }
-
-    public void setApostA(int apostA) {
-        this.apostA = apostA;
-    }
-
-    public int getApostB() {
-        return apostB;
-    }
-
-    public void setApostB(int apostB) {
-        this.apostB = apostB;
-    }
-
-    public int getApostC() {
-        return apostC;
-    }
-
-    public void setApostC(int apostC) {
-        this.apostC = apostC;
-    }
-
-    public int getApostD() {
-        return apostD;
-    }
-
-    public void setApostD(int apostD) {
-        this.apostD = apostD;
-    }
-
-    public int getApostE() {
-        return apostE;
-    }
-
-    public void setApostE(int apostE) {
-        this.apostE = apostE;
-    }
     //=================================================================================================================
 }

@@ -68,7 +68,7 @@ public class Telas {
                         }
                         else {
                             if (menuSorteio == 1) {
-                                ap.result();
+                                ap.result(cod);
                             }
                             if (menuSorteio == 2) {
                                 ap.sortead();
