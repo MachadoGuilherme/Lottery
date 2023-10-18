@@ -1,0 +1,285 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;}
+{\colortbl;\red255\green255\blue255;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
+\red133\green96\blue154;\red109\green109\blue109;\red254\green187\blue91;\red86\green132\blue173;\red88\green118\blue71;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c99608\c73333\c35686;\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c34510\c46275\c27843;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 package \cf4 com.example.lottery\cf2 ;\
+\
+import \cf4 java.util.Scanner\cf2 ;\
+\
+public class \cf4 Aposta \{\
+\
+    Scanner \cf5 entrada \cf4 = \cf2 new \cf4 Scanner(System.
+\f1\i \cf5 in
+\f0\i0 \cf4 )\cf2 ;\
+    \cf4 Codigo \cf5 codi \cf4 = \cf2 new \cf4 Codigo()\cf2 ;\
+    \cf4 Sorteio \cf5 sor \cf4 = \cf2 new \cf4 Sorteio()\cf2 ;\
+    public int \cf5 apostA\cf2 ;\
+    public int \cf5 apostB\cf2 ;\
+    public int \cf5 apostC\cf2 ;\
+    public int \cf5 apostD\cf2 ;\
+    public int \cf5 apostE\cf2 ;\
+    public int \cf5 aposta\cf2 ;\
+    private int \cf5 senha\cf2 ;\
+    public int \cf5 pass\cf2 ;\
+    public int \cf5 menuPass\cf2 ;\
+    public int \cf5 menuSenha\cf2 ;\
+\
+    \cf6 //=================================================================================================================\
+    \cf2 public \cf7 Aposta\cf4 () \{\
+    \}\
+\
+    \cf6 //=================================================================================================================\
+    \cf2 public void \cf7 result\cf4 () \{\
+        \cf2 if \cf4 (getApostA() == \cf8 0\cf4 ) \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\\t\cf9 !! Resultados Ainda N\'e3o Disponiveis Para O Sorteio !!"\cf4 )\cf2 ;\
+        \cf4 \} \cf2 else \cf4 \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 Os Numeros Sorteados Foram: " \cf4 + getApostA() + \cf9 " - " \cf4 + getApostB() + \cf9 " - " \cf4 + getApostC() + \cf9 " - " \cf4 + getApostD() + \cf9 " - " \cf4 + getApostE())\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "Os Numeros Jogados Foram: " \cf4 + \cf5 codi\cf4 .getNumA() + \cf9 " - " \cf4 + \cf5 codi\cf4 .getNumB() + \cf9 " - " \cf4 + \cf5 codi\cf4 .getNumC() + \cf9 " - " \cf4 + \cf5 codi\cf4 .getNumD() + \cf9 " - " \cf4 + \cf5 codi\cf4 .getNumE())\cf2 ;\
+            \cf5 sor\cf4 .compara()\cf2 ;\
+        \cf4 \}\
+    \}\
+\
+    \cf6 //=================================================================================================================\
+    \cf2 public void \cf7 sortead\cf4 () \{\
+        \cf2 if \cf4 (getApostA() == \cf8 0\cf4 ) \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\\t\cf9 !! Os N\'bas Sorteados Ainda N\'e3o Sairam !!"\cf4 )\cf2 ;\
+        \cf4 \} \cf2 else \cf4 \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 Os Numeros Sorteados Foram: " \cf4 + getApostA() + \cf9 " - " \cf4 + getApostB() + \cf9 " - " \cf4 + getApostC() + \cf9 " - " \cf4 + getApostD() + \cf9 " - " \cf4 + getApostE())\cf2 ;\
+        \cf4 \}\
+    \}\
+\
+    \cf6 //=================================================================================================================\
+    \cf2 public void \cf7 fazNumAposta\cf4 () \{\
+        System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "\cf2 \\n\cf9 Senha: "\cf4 )\cf2 ;\
+        \cf5 pass \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+\
+        if \cf4 (\cf5 pass \cf4 != getSenha()) \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\\t\cf9 !! Senha Invalida !!"\cf4 )\cf2 ;\
+        \cf4 \} \cf2 else \cf4 \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 ** Numeros A Sortear **"\cf4 )\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 Entre Com Os 5 Numeros Do Sorteio\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+            \cf6 //-- primeiro numero --\
+            \cf2 do \cf4 \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Entre Com o 1\'ba Numero a Sortear: "\cf4 )\cf2 ;\
+                \cf5 aposta \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                if \cf4 (\cf5 aposta \cf4 >= \cf8 1 \cf4 && \cf5 aposta \cf4 <= \cf8 50\cf4 ) \{\
+                    setApostA(\cf5 aposta\cf4 )\cf2 ;\
+                \cf4 \} \cf2 else \cf4 \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Entre Com N\'bas Entre 1 e 50 !!\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+                \cf4 \}\
+            \} \cf2 while \cf4 (\cf5 aposta \cf4 <= \cf8 0 \cf4 || \cf5 aposta \cf4 >= \cf8 51\cf4 )\cf2 ;\
+            \cf6 //-- segundo numero --\
+            \cf2 do \cf4 \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Entre Com o 2\'ba Numero a Sortear: "\cf4 )\cf2 ;\
+                \cf5 aposta \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                if \cf4 (\cf5 aposta \cf4 >= \cf8 1 \cf4 && \cf5 aposta \cf4 <= \cf8 50\cf4 ) \{\
+                    setApostB(\cf5 aposta\cf4 )\cf2 ;\
+                \cf4 \} \cf2 else \cf4 \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Entre Com N\'bas Entre 1 e 50 !!\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+                \cf4 \}\
+            \} \cf2 while \cf4 (\cf5 aposta \cf4 <= \cf8 0 \cf4 || \cf5 aposta \cf4 >= \cf8 51\cf4 )\cf2 ;\
+            \cf6 //-- terceiro numero --\
+            \cf2 do \cf4 \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Entre Com o 3\'ba Numero a Sortear: "\cf4 )\cf2 ;\
+                \cf5 aposta \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                if \cf4 (\cf5 aposta \cf4 >= \cf8 1 \cf4 && \cf5 aposta \cf4 <= \cf8 50\cf4 ) \{\
+                    setApostC(\cf5 aposta\cf4 )\cf2 ;\
+                \cf4 \} \cf2 else \cf4 \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Entre Com N\'bas Entre 1 e 50 !!\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+                \cf4 \}\
+            \} \cf2 while \cf4 (\cf5 aposta \cf4 <= \cf8 0 \cf4 || \cf5 aposta \cf4 >= \cf8 51\cf4 )\cf2 ;\
+            \cf6 //-- quarto numero --\
+            \cf2 do \cf4 \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Entre Com o 4\'ba Numero a Sortear: "\cf4 )\cf2 ;\
+                \cf5 aposta \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                if \cf4 (\cf5 aposta \cf4 >= \cf8 1 \cf4 && \cf5 aposta \cf4 <= \cf8 50\cf4 ) \{\
+                    setApostD(\cf5 aposta\cf4 )\cf2 ;\
+                \cf4 \} \cf2 else \cf4 \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Entre Com N\'bas Entre 1 e 50 !!\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+                \cf4 \}\
+            \} \cf2 while \cf4 (\cf5 aposta \cf4 <= \cf8 0 \cf4 || \cf5 aposta \cf4 >= \cf8 51\cf4 )\cf2 ;\
+            \cf6 //-- quinto numero --\
+            \cf2 do \cf4 \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Entre Com o 5\'ba Numero a Sortear: "\cf4 )\cf2 ;\
+                \cf5 aposta \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                if \cf4 (\cf5 aposta \cf4 >= \cf8 1 \cf4 && \cf5 aposta \cf4 <= \cf8 50\cf4 ) \{\
+                    setApostE(\cf5 aposta\cf4 )\cf2 ;\
+                \cf4 \} \cf2 else \cf4 \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Entre Com N\'bas Entre 1 e 50 !!\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+                \cf4 \}\
+            \} \cf2 while \cf4 (\cf5 aposta \cf4 <= \cf8 0 \cf4 || \cf5 aposta \cf4 >= \cf8 51\cf4 )\cf2 ;\
+            \cf6 //-- numeros da aposta --\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 Os Numeros Escolhidos Foram: " \cf4 + getApostA() + \cf9 " - " \cf4 + getApostB() + \cf9 " - " \cf4 + getApostC() + \cf9 " - " \cf4 + getApostD() + \cf9 " - " \cf4 + getApostE())\cf2 ;\
+        \cf4 \}\
+    \}\
+\
+    \cf6 //=================================================================================================================\
+    \cf2 public void \cf7 senhaPass\cf4 () \{\
+        \cf2 do \cf4 \{\
+            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\n\\t\\t\cf9 ~~~~~~ Criar Alterar Senha ~~~~~~\cf2 \\n\cf9 "\cf4 )\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "1 - Criar Senha"\cf4 )\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "2 - Alterar Senha"\cf4 )\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 3 - Voltar"\cf4 )\cf2 ;\
+            \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "\cf2 \\n\cf9 Escolha Uma Das Op\'e7\'f5es: "\cf4 )\cf2 ;\
+            \cf5 menuPass \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+\
+            if \cf4 (\cf5 menuPass \cf4 < \cf8 1 \cf4 || \cf5 menuPass \cf4 > \cf8 3\cf4 ) \{\
+                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! Op\'e7\'e3o Invalida !!"\cf4 )\cf2 ;\
+            \cf4 \} \cf2 else \cf4 \{\
+                \cf2 if \cf4 (\cf5 menuPass \cf4 == \cf8 1\cf4 ) \{\
+                    \cf2 if \cf4 (getSenha() != \cf8 0\cf4 ) \{\
+                        System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\\t\cf9 !! J\'e1 Tem Senha Criada !! Para Alterar Utilize o Menu 2 - Alterar Senha !!"\cf4 )\cf2 ;\
+                    \cf4 \} \cf2 else \cf4 \{\
+                        \cf2 do \cf4 \{\
+                            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Crie Sua Senha: "\cf4 )\cf2 ;\
+                            \cf5 menuSenha \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                            \cf4 setSenha(\cf5 menuSenha\cf4 )\cf2 ;\
+                        \cf4 \} \cf2 while \cf4 (\cf5 menuSenha \cf4 == \cf8 0\cf4 )\cf2 ;\
+                        \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 Senha Criada Com Sucesso"\cf4 )\cf2 ;\
+                    \cf4 \}\
+                \}\
+                \cf6 //-----------------------------------------------------------------------------------------------------\
+                \cf2 if \cf4 (\cf5 menuPass \cf4 == \cf8 2\cf4 ) \{\
+                    System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Senha Anterior: "\cf4 )\cf2 ;\
+                    \cf5 menuSenha \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+\
+                    if \cf4 (\cf5 menuSenha \cf4 != getSenha()) \{\
+                        System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "\cf2 \\n\\t\cf9 !! Senha Incorreta !!"\cf4 )\cf2 ;\
+                    \cf4 \} \cf2 else \cf4 \{\
+                        \cf2 do \cf4 \{\
+                            System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .print(\cf9 "Crie Sua Senha: "\cf4 )\cf2 ;\
+                            \cf5 menuSenha \cf4 = \cf5 entrada\cf4 .nextInt()\cf2 ;\
+                            \cf4 setSenha(\cf5 menuSenha\cf4 )\cf2 ;\
+                        \cf4 \} \cf2 while \cf4 (\cf5 menuSenha \cf4 == \cf8 0\cf4 )\cf2 ;\
+                        \cf4 System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf9 "\cf2 \\n\cf9 Senha Alterada Com Sucesso"\cf4 )\cf2 ;\
+                    \cf4 \}\
+                \}\
+            \}\
+        \} \cf2 while \cf4 (\cf5 menuPass \cf4 != \cf8 3\cf4 )\cf2 ;\
+    \cf4 \}\
+    \cf6 //=================================================================================================================\
+\
+    \cf2 private int \cf7 getSenha\cf4 () \{\
+        \cf2 return \cf5 senha\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 private void \cf7 setSenha\cf4 (\cf2 int \cf4 senha) \{\
+        \cf2 this\cf4 .\cf5 senha \cf4 = senha\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public int \cf7 getApostA\cf4 () \{\
+        \cf2 return \cf5 apostA\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public void \cf7 setApostA\cf4 (\cf2 int \cf4 apostA) \{\
+        \cf2 this\cf4 .\cf5 apostA \cf4 = apostA\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public int \cf7 getApostB\cf4 () \{\
+        \cf2 return \cf5 apostB\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public void \cf7 setApostB\cf4 (\cf2 int \cf4 apostB) \{\
+        \cf2 this\cf4 .\cf5 apostB \cf4 = apostB\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public int \cf7 getApostC\cf4 () \{\
+        \cf2 return \cf5 apostC\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public void \cf7 setApostC\cf4 (\cf2 int \cf4 apostC) \{\
+        \cf2 this\cf4 .\cf5 apostC \cf4 = apostC\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public int \cf7 getApostD\cf4 () \{\
+        \cf2 return \cf5 apostD\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public void \cf7 setApostD\cf4 (\cf2 int \cf4 apostD) \{\
+        \cf2 this\cf4 .\cf5 apostD \cf4 = apostD\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public int \cf7 getApostE\cf4 () \{\
+        \cf2 return \cf5 apostE\cf2 ;\
+    \cf4 \}\
+\
+    \cf2 public void \cf7 setApostE\cf4 (\cf2 int \cf4 apostE) \{\
+        \cf2 this\cf4 .\cf5 apostE \cf4 = apostE\cf2 ;\
+    \cf4 \}\
+    \cf6 //=================================================================================================================\
+\cf4 \}\
+\
+}
