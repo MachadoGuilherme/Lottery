@@ -22,8 +22,18 @@ public class Codigo {
             System.out.print("Entre Com o " + (i + 1) + "º Nº do Jogo: ");
             jogo = entrada.nextInt();
 
-            numJogo[i] = jogo;
+            if (jogo > 0 && jogo < 51) {
+                numJogo[i] = jogo;
+            } else {
+                do {
+                    System.out.print("\n\t!! Apenas Nºs Entre 1 e 50 !!\n\n");
+                    System.out.print("Entre Com o " + (i + 1) + "º Nº do Jogo: ");
+                    jogo = entrada.nextInt();
+                    numJogo[i] = jogo;
+                } while (jogo <= 0 || jogo >= 51);
+            }
         }
+
         while (!resultado) {
             resultado = true;
 

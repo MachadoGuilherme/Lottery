@@ -34,7 +34,7 @@ public class Telas {
                 //-- inivial 01 --
                 if (menuInicial == 1) {
                     do {
-                        System.out.println("\n\n\t\t------ Jogos APP ------\n");
+                        System.out.println("\n\n\t\t------ Area de Jogos ------\n");
                         System.out.println("1 - Jogar");
                         System.out.println("2 - Nº Jogados");
                         System.out.println("\n3 - Voltar");
@@ -72,13 +72,13 @@ public class Telas {
                         else {
                             if (menuSorteio == 1) {
                                 System.out.println("\n\n\t\t------ Resultados ------\n");
-                                ap.result();
+                                ap.result(cod);
                                 cod.numJogado();
                                 sor.StartAposta(cod, ap);
                                 menuSorteio = 3;
                             }
                             if (menuSorteio == 2) {
-                                ap.sortead();
+                                ap.sortead(cod);
                                 menuSorteio = 3;
                             }
                         }

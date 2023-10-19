@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab394bbb-51f3-473f-a281-3c9d996ab264" name="Changes" comment="day 06">
+    <list default="true" id="ab394bbb-51f3-473f-a281-3c9d996ab264" name="Changes" comment="day 06 - class Sorteio correction 1.3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lottery/Sorteio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lottery/Sorteio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aposta.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/aposta.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jogo.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/jogo.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/principal.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/principal.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sorteio.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/sorteio.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lottery/Aposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lottery/Aposta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lottery/Codigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lottery/Codigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lottery/Telas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lottery/Telas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telas.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/telas.rtf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697720515106</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="day 06 - class Sorteio correction 1.3">
+      <created>1697722545848</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697722545848</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +128,7 @@
     <MESSAGE value="day 04" />
     <MESSAGE value="day 05" />
     <MESSAGE value="day 06" />
-    <option name="LAST_COMMIT_MESSAGE" value="day 06" />
+    <MESSAGE value="day 06 - class Sorteio correction 1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="day 06 - class Sorteio correction 1.3" />
   </component>
 </project>

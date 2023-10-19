@@ -7,7 +7,7 @@
 \csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c99608\c73333\c35686;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c33725\c51765\c67843;
 }
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs26 \cf2 \cb3 package \cf4 com.example.lottery\cf2 ;\
 \
@@ -20,6 +20,7 @@ public class \cf4 Telas \{\
 \f0\i0 \cf4 )\cf2 ;\
     \cf4 Codigo \cf5 cod \cf4 = \cf2 new \cf4 Codigo()\cf2 ;\
     \cf4 Aposta \cf5 ap \cf4 = \cf2 new \cf4 Aposta()\cf2 ;\
+    \cf4 Sorteio \cf5 sor \cf4 = \cf2 new \cf4 Sorteio()\cf2 ;\
     int \cf5 menuInicial\cf2 ;\
     int \cf5 menuJogos\cf2 ;\
     int \cf5 menuSorteio\cf2 ;\
@@ -87,9 +88,11 @@ public class \cf4 Telas \{\
                         \cf2 else \cf4 \{\
                             \cf2 if \cf4 (\cf5 menuJogos \cf4 == \cf9 1\cf4 ) \{\
                                 \cf5 cod\cf4 .game()\cf2 ;\
+                                \cf5 menuJogos \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                             \cf2 if \cf4 (\cf5 menuJogos \cf4 == \cf9 2\cf4 ) \{\
                                 \cf5 cod\cf4 .numJogado()\cf2 ;\
+                                \cf5 menuJogos \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                         \}\
                     \}\cf2 while \cf4 (\cf5 menuJogos \cf4 != \cf9 3\cf4 )\cf2 ;\
@@ -99,7 +102,7 @@ public class \cf4 Telas \{\
                     \cf2 do \cf4 \{\
                         System.
 \f1\i \cf5 out
-\f0\i0 \cf4 .println(\cf8 "\cf2 \\n\\n\\t\\t\cf8 ------ Resultados & Premios ------\cf2 \\n\cf8 "\cf4 )\cf2 ;\
+\f0\i0 \cf4 .println(\cf8 "\cf2 \\n\\n\\t\\t\cf8 ------ Resultados & Acertos ------\cf2 \\n\cf8 "\cf4 )\cf2 ;\
                         \cf4 System.
 \f1\i \cf5 out
 \f0\i0 \cf4 .println(\cf8 "1 - Resultados"\cf4 )\cf2 ;\
@@ -121,10 +124,17 @@ public class \cf4 Telas \{\
                         \cf4 \}\
                         \cf2 else \cf4 \{\
                             \cf2 if \cf4 (\cf5 menuSorteio \cf4 == \cf9 1\cf4 ) \{\
+                                System.
+\f1\i \cf5 out
+\f0\i0 \cf4 .println(\cf8 "\cf2 \\n\\n\\t\\t\cf8 ------ Resultados ------\cf2 \\n\cf8 "\cf4 )\cf2 ;\
                                 \cf5 ap\cf4 .result()\cf2 ;\
+                                \cf5 cod\cf4 .numJogado()\cf2 ;\
+                                \cf5 sor\cf4 .StartAposta(\cf5 cod\cf2 , \cf5 ap\cf4 )\cf2 ;\
+                                \cf5 menuSorteio \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                             \cf2 if \cf4 (\cf5 menuSorteio \cf4 == \cf9 2\cf4 ) \{\
                                 \cf5 ap\cf4 .sortead()\cf2 ;\
+                                \cf5 menuSorteio \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                         \}\
                     \}\cf2 while \cf4 (\cf5 menuSorteio \cf4 != \cf9 3\cf4 )\cf2 ;\
@@ -137,7 +147,7 @@ public class \cf4 Telas \{\
 \f0\i0 \cf4 .println(\cf8 "\cf2 \\n\\n\\t\\t\cf8 ~~~~~~ Area Reservada ~~~~~~\cf2 \\n\cf8 "\cf4 )\cf2 ;\
                         \cf4 System.
 \f1\i \cf5 out
-\f0\i0 \cf4 .println(\cf8 "1 - Criar Numeros Sorteio"\cf4 )\cf2 ;\
+\f0\i0 \cf4 .println(\cf8 "1 - Gerar Numeros Sorteio"\cf4 )\cf2 ;\
                         \cf4 System.
 \f1\i \cf5 out
 \f0\i0 \cf4 .println(\cf8 "2 - Password"\cf4 )\cf2 ;\
@@ -157,9 +167,11 @@ public class \cf4 Telas \{\
                         \cf2 else \cf4 \{\
                             \cf2 if \cf4 (\cf5 menuReservado \cf4 == \cf9 1\cf4 ) \{\
                                 \cf5 ap\cf4 .fazNumAposta()\cf2 ;\
+                                \cf5 menuReservado \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                             \cf2 if \cf4 (\cf5 menuReservado \cf4 == \cf9 2\cf4 ) \{\
                                 \cf5 ap\cf4 .senhaPass()\cf2 ;\
+                                \cf5 menuReservado \cf4 = \cf9 3\cf2 ;\
                             \cf4 \}\
                         \}\
                     \}\cf2 while \cf4 (\cf5 menuReservado \cf4 != \cf9 3\cf4 )\cf2 ;\
