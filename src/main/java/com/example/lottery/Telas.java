@@ -59,7 +59,7 @@ public class Telas {
                 //-- inicial 02 --
                 if (menuInicial == 2) {
                     do {
-                        System.out.println("\n\n\t\t------ Resultados & Premios ------\n");
+                        System.out.println("\n\n\t\t------ Resultados & Acertos ------\n");
                         System.out.println("1 - Resultados");
                         System.out.println("2 - Nª Sorteado");
                         System.out.println("\n3 - Voltar");
@@ -71,6 +71,7 @@ public class Telas {
                         }
                         else {
                             if (menuSorteio == 1) {
+                                System.out.println("\n\n\t\t------ Resultados ------\n");
                                 ap.result();
                                 cod.numJogado();
                                 sor.StartAposta(cod, ap);
