@@ -7,6 +7,7 @@ public class Telas {
     Scanner entrada = new Scanner(System.in);
     Codigo cod = new Codigo();
     Aposta ap = new Aposta();
+    Sorteio sor = new Sorteio();
     int menuInicial;
     int menuJogos;
     int menuSorteio;
@@ -46,9 +47,11 @@ public class Telas {
                         else {
                             if (menuJogos == 1) {
                                 cod.game();
+                                menuJogos = 3;
                             }
                             if (menuJogos == 2) {
                                 cod.numJogado();
+                                menuJogos = 3;
                             }
                         }
                     }while (menuJogos != 3);
@@ -68,10 +71,14 @@ public class Telas {
                         }
                         else {
                             if (menuSorteio == 1) {
-                                ap.result(cod);
+                                ap.result();
+                                cod.numJogado();
+                                sor.StartAposta(cod, ap);
+                                menuSorteio = 3;
                             }
                             if (menuSorteio == 2) {
                                 ap.sortead();
+                                menuSorteio = 3;
                             }
                         }
                     }while (menuSorteio != 3);
@@ -80,7 +87,7 @@ public class Telas {
                 if (menuInicial == 3) {
                     do {
                         System.out.println("\n\n\t\t~~~~~~ Area Reservada ~~~~~~\n");
-                        System.out.println("1 - Criar Numeros Sorteio");
+                        System.out.println("1 - Gerar Numeros Sorteio");
                         System.out.println("2 - Password");
                         System.out.println("\n3 - Voltar");
                         System.out.print("\nEscolha Uma Das Opções: ");
@@ -92,9 +99,11 @@ public class Telas {
                         else {
                             if (menuReservado == 1) {
                                 ap.fazNumAposta();
+                                menuReservado = 3;
                             }
                             if (menuReservado == 2) {
                                 ap.senhaPass();
+                                menuReservado = 3;
                             }
                         }
                     }while (menuReservado != 3);

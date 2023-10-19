@@ -6,7 +6,7 @@ public class Codigo {
 
     Scanner entrada = new Scanner(System.in);
 
-    private int numJogo[] = new int[5];
+    public int numJogo[] = new int[5];
     boolean resultado = false;
     public int jogo;
 
@@ -39,7 +39,6 @@ public class Codigo {
         }
         //-- numeros jogados --
         System.out.println("\nOs Numeros Jogados Foram: " + numJogo[0] + " - " + numJogo[1] + " - " + numJogo[2] + " - " + numJogo[3] + " - " + numJogo[4]);
-        //=================================================================================================================
     }
 
     //=================================================================================================================

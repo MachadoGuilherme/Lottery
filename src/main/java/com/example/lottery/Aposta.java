@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Aposta {
 
     Scanner entrada = new Scanner(System.in);
-    private int numAposta[] = new int[5];
-    private int repedito[] = new int[5];
+    public int numAposta[] = new int[5];
     boolean resultado = false;
     int x = 0;
     public int aposta;
@@ -20,19 +19,11 @@ public class Aposta {
     }
 
     //=================================================================================================================
-    public void result(Codigo codi) {
+    public void result() {
         if (numAposta[0] == 0) {
             System.out.println("\n\t\t!! Resultados Ainda Não Disponiveis Para O Sorteio !!");
         } else {
             System.out.println("\nOs Numeros Sorteados Foram: " + numAposta[0] + " - " + numAposta[1] + " - " + numAposta[2] + " - " + numAposta[3] + " - " + numAposta[4]);
-            //System.out.println("Os Numeros Jogados Foram: " + codi.getNumA() + " - " + codi.getNumB() + " - " + codi.getNumC() + " - " + codi.getNumD() + " - " + codi.getNumE());
-
-            /*if (getApostA() != codi.getNumA()) {
-                System.out.println("\n** Não Acertou Nenhum Numero **");
-            }
-            if (getApostA() == codi.getNumA()) {
-                System.out.println("\n## Acertou o Nº: " + getApostA());
-            }*/
         }
     }
 
@@ -106,6 +97,7 @@ public class Aposta {
                             setSenha(menuSenha);
                         } while (menuSenha == 0);
                         System.out.println("\nSenha Criada Com Sucesso");
+                        menuPass = 3;
                     }
                 }
                 //-----------------------------------------------------------------------------------------------------
@@ -117,11 +109,12 @@ public class Aposta {
                         System.out.print("\n\t!! Senha Incorreta !!");
                     } else {
                         do {
-                            System.out.print("Crie Sua Senha: ");
+                            System.out.print("Crie Sua Nova Senha: ");
                             menuSenha = entrada.nextInt();
                             setSenha(menuSenha);
                         } while (menuSenha == 0);
                         System.out.println("\nSenha Alterada Com Sucesso");
+                        menuPass = 3;
                     }
                 }
             }
